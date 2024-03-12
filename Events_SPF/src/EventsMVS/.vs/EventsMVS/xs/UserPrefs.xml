@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{754E53CA-7D8D-49B1-94B1-2DA6966E0B40}|https">
+  <MonoDevelop.Ide.ItemProperties.EventsInfrastructure PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.EventsDomain FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="EventsInfrastructure/Models/ErrorViewModel.cs">
+    <Files>
+      <File FileName="EventsDomain/Class1.cs" Line="1" Column="1" />
+      <File FileName="EventsInfrastructure/Models/ErrorViewModel.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EventsMVS" expanded="True">
+            <Node name="EventsInfrastructure">
+              <Node name="Models" expanded="True">
+                <Node name="ErrorViewModel.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

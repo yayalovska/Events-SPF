@@ -1,0 +1,11 @@
+/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsDomain/bin/Debug/net7.0/EventsDomain.deps.json
+/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsDomain/bin/Debug/net7.0/EventsDomain.dll
+/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsDomain/bin/Debug/net7.0/EventsDomain.pdb
+/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsDomain/obj/Debug/net7.0/EventsDomain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsDomain/obj/Debug/net7.0/EventsDomain.AssemblyInfoInputs.cache
+/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsDomain/obj/Debug/net7.0/EventsDomain.AssemblyInfo.cs
+/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsDomain/obj/Debug/net7.0/EventsDomain.csproj.CoreCompileInputs.cache
+/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsDomain/obj/Debug/net7.0/EventsDomain.dll
+/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsDomain/obj/Debug/net7.0/refint/EventsDomain.dll
+/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsDomain/obj/Debug/net7.0/EventsDomain.pdb
+/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsDomain/obj/Debug/net7.0/ref/EventsDomain.dll
