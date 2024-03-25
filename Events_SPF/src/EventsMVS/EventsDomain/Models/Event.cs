@@ -5,7 +5,7 @@ namespace EventsDomain.Models;
 
 public partial class Event : Entity
 {
-    public int Id { get; set; }
+    public new int Id { get; set; }
 
     public string Name { get; set; } = null!;
 

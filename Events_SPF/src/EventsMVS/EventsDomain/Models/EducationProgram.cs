@@ -5,7 +5,7 @@ namespace EventsDomain.Models;
 
 public partial class EducationProgram : Entity
 {
-    public int Id { get; set; }
+    public new int Id { get; set; }
 
     public string? Name { get; set; }
 

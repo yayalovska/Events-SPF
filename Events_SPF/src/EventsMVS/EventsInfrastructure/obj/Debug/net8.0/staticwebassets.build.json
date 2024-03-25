@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Plp9+GoW95YSYtGR1ZF6cNo1j/StPd2A+MX4AvuRr9E=",
+  "Hash": "Xtrm116fQTOEXsmEXgGPtoSzNIAgAraP3KiQlrvi+pY=",
   "Source": "EventsInfrastructure",
   "BasePath": "_content/EventsInfrastructure",
   "Mode": "Default",
@@ -16,6 +16,44 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "/Users/yanayalovska/.nuget/packages/microsoft.aspnetcore.components.quickgrid/8.0.3/staticwebassets/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/yanayalovska/.nuget/packages/microsoft.aspnetcore.components.quickgrid/8.0.3/staticwebassets/",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
+      "RelativePath": "Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/yanayalovska/.nuget/packages/microsoft.aspnetcore.components.quickgrid/8.0.3/staticwebassets/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/yanayalovska/.nuget/packages/microsoft.aspnetcore.components.quickgrid/8.0.3/staticwebassets/QuickGrid.razor.js",
+      "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/yanayalovska/.nuget/packages/microsoft.aspnetcore.components.quickgrid/8.0.3/staticwebassets/",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
+      "RelativePath": "QuickGrid.razor.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/yanayalovska/.nuget/packages/microsoft.aspnetcore.components.quickgrid/8.0.3/staticwebassets/QuickGrid.razor.js"
+    },
     {
       "Identity": "/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/obj/Debug/net8.0/scopedcss/bundle/EventsInfrastructure.styles.css",
       "SourceId": "EventsInfrastructure",
