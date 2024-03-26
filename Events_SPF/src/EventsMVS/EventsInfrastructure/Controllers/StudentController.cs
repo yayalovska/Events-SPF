@@ -10,24 +10,23 @@ using EventsInfrastructure;
 
 namespace EventsInfrastructure.Controllers
 {
-    public class FacultiesController : Controller
+    public class StudentController : Controller
     {
         private readonly BdeventsContext _context;
 
-        public FacultiesController(BdeventsContext context)
+        public StudentController(BdeventsContext context)
         {
             _context = context;
         }
 
-        // GET: Faculties
+        // GET: Student
         public async Task<IActionResult> Index()
         {
-            // Відображення всіх факультетів
-            var faculties = await _context.Faculties.ToListAsync();
-            return View(faculties); // Зверніть увагу: використовуємо "Index" як назву в'юшки за замовчуванням
+            var bdeventsContext = _context.Students.Include(s => s.Department);
+            return View(await bdeventsContext.ToListAsync());
         }
 
-        // GET: Faculties/Details/5
+        // GET: Student/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,40 +34,42 @@ namespace EventsInfrastructure.Controllers
                 return NotFound();
             }
 
-            var faculty = await _context.Faculties
-                .Include(f => f.Departments) // Для відображення департаментів в деталях факультету
+            var student = await _context.Students
+                .Include(s => s.Department)
                 .FirstOrDefaultAsync(m => m.Id == id);
-
-            if (faculty == null)
+            if (student == null)
             {
                 return NotFound();
             }
 
-            return View(faculty); // Зверніть увагу: використовуємо "Details" як назву в'юшки
+            return View(student);
         }
 
-        // GET: Faculties/Create
+        // GET: Student/Create
         public IActionResult Create()
         {
-            // Метод Create вже не залежить від departmentId, тому що факультети створюються окремо
-            return View(); // Використовується в'юшка Create без передачі даних
+            ViewData["DepartmentId"] = new SelectList(_context.Departments, "Id", "Name");
+            return View();
         }
 
-        // POST: Faculties/Create
+        // POST: Student/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Faculty faculty)
+        public async Task<IActionResult> Create([Bind("Id,FullName,BirthDate,DepartmentId")] Student student)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(faculty);
+                _context.Add(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(faculty);
+            ViewData["DepartmentId"] = new SelectList(_context.Departments, "Id", "Name", student.DepartmentId);
+            return View(student);
         }
 
-        // GET: Faculties/Edit/5
+        // GET: Student/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -76,20 +77,23 @@ namespace EventsInfrastructure.Controllers
                 return NotFound();
             }
 
-            var faculty = await _context.Faculties.FindAsync(id);
-            if (faculty == null)
+            var student = await _context.Students.FindAsync(id);
+            if (student == null)
             {
                 return NotFound();
             }
-            return View(faculty); // Використовується в'юшка Edit для редагування факультету
+            ViewData["DepartmentId"] = new SelectList(_context.Departments, "Id", "Name", student.DepartmentId);
+            return View(student);
         }
 
-        // POST: Faculties/Edit/5
+        // POST: Student/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Faculty faculty)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,BirthDate,DepartmentId")] Student student)
         {
-            if (id != faculty.Id)
+            if (id != student.Id)
             {
                 return NotFound();
             }
@@ -98,12 +102,12 @@ namespace EventsInfrastructure.Controllers
             {
                 try
                 {
-                    _context.Update(faculty);
+                    _context.Update(student);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FacultyExists(faculty.Id))
+                    if (!StudentExists(student.Id))
                     {
                         return NotFound();
                     }
@@ -114,10 +118,11 @@ namespace EventsInfrastructure.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(faculty);
+            ViewData["DepartmentId"] = new SelectList(_context.Departments, "Id", "Name", student.DepartmentId);
+            return View(student);
         }
 
-        // GET: Faculties/Delete/5
+        // GET: Student/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -125,36 +130,35 @@ namespace EventsInfrastructure.Controllers
                 return NotFound();
             }
 
-            var faculty = await _context.Faculties
+            var student = await _context.Students
+                .Include(s => s.Department)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (faculty == null)
+            if (student == null)
             {
                 return NotFound();
             }
 
-            return View(faculty); // Використовується в'юшка Delete для видалення факультету
+            return View(student);
         }
 
-        // POST: Faculties/Delete/5
+        // POST: Student/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var faculty = await _context.Faculties.FindAsync(id);
-            if (faculty != null)
+            var student = await _context.Students.FindAsync(id);
+            if (student != null)
             {
-                _context.Faculties.Remove(faculty);
-                await _context.SaveChangesAsync();
+                _context.Students.Remove(student);
             }
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool FacultyExists(int id)
+        private bool StudentExists(int id)
         {
-            return _context.Faculties.Any(e => e.Id == id);
+            return _context.Students.Any(e => e.Id == id);
         }
     }
 }
-
-

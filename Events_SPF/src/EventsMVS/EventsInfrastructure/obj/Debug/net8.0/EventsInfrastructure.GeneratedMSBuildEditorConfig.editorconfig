@@ -46,6 +46,66 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwYXJ0bWVudHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/EducationProgram/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRWR1Y2F0aW9uUHJvZ3JhbS9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/EducationProgram/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRWR1Y2F0aW9uUHJvZ3JhbS9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/EducationProgram/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRWR1Y2F0aW9uUHJvZ3JhbS9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/EducationProgram/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRWR1Y2F0aW9uUHJvZ3JhbS9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/EducationProgram/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRWR1Y2F0aW9uUHJvZ3JhbS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/Event/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/Event/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/Event/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/Event/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/Event/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/EventParticipation/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRQYXJ0aWNpcGF0aW9uL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/EventParticipation/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRQYXJ0aWNpcGF0aW9uL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/EventParticipation/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRQYXJ0aWNpcGF0aW9uL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/EventParticipation/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRQYXJ0aWNpcGF0aW9uL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/EventParticipation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRQYXJ0aWNpcGF0aW9uL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/Faculties/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmFjdWx0aWVzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -80,6 +140,66 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/Student/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudC9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/Student/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudC9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/Student/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudC9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/Student/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudC9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/Student/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/StudentParliamentMember/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhcmxpYW1lbnRNZW1iZXIvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/StudentParliamentMember/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhcmxpYW1lbnRNZW1iZXIvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/StudentParliamentMember/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhcmxpYW1lbnRNZW1iZXIvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/StudentParliamentMember/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhcmxpYW1lbnRNZW1iZXIvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/StudentParliamentMember/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhcmxpYW1lbnRNZW1iZXIvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/StudentParliamentPosition/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhcmxpYW1lbnRQb3NpdGlvbi9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/StudentParliamentPosition/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhcmxpYW1lbnRQb3NpdGlvbi9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/StudentParliamentPosition/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhcmxpYW1lbnRQb3NpdGlvbi9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/StudentParliamentPosition/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhcmxpYW1lbnRQb3NpdGlvbi9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/StudentParliamentPosition/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhcmxpYW1lbnRQb3NpdGlvbi9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/Views/_ViewImports.cshtml]

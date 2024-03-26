@@ -7,7 +7,7 @@
 <h1>Факультет @ViewBag.DepartmentName </h1>
 
 <p>
-    @Html. ActionLink("Додати","Create", new {departmentId = ViewBag.DepartmentId})
+    @Html.ActionLink("Додати", "Create", "Faculties", new { departmentId = ViewBag.DepartmentId }, null)
 </p>
 
 <table class="table">

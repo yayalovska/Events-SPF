@@ -10,24 +10,22 @@ using EventsInfrastructure;
 
 namespace EventsInfrastructure.Controllers
 {
-    public class FacultiesController : Controller
+    public class EventController : Controller
     {
         private readonly BdeventsContext _context;
 
-        public FacultiesController(BdeventsContext context)
+        public EventController(BdeventsContext context)
         {
             _context = context;
         }
 
-        // GET: Faculties
+        // GET: Event
         public async Task<IActionResult> Index()
         {
-            // Відображення всіх факультетів
-            var faculties = await _context.Faculties.ToListAsync();
-            return View(faculties); // Зверніть увагу: використовуємо "Index" як назву в'юшки за замовчуванням
+            return View(await _context.Events.ToListAsync());
         }
 
-        // GET: Faculties/Details/5
+        // GET: Event/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,40 +33,39 @@ namespace EventsInfrastructure.Controllers
                 return NotFound();
             }
 
-            var faculty = await _context.Faculties
-                .Include(f => f.Departments) // Для відображення департаментів в деталях факультету
+            var @event = await _context.Events
                 .FirstOrDefaultAsync(m => m.Id == id);
-
-            if (faculty == null)
+            if (@event == null)
             {
                 return NotFound();
             }
 
-            return View(faculty); // Зверніть увагу: використовуємо "Details" як назву в'юшки
+            return View(@event);
         }
 
-        // GET: Faculties/Create
+        // GET: Event/Create
         public IActionResult Create()
         {
-            // Метод Create вже не залежить від departmentId, тому що факультети створюються окремо
-            return View(); // Використовується в'юшка Create без передачі даних
+            return View();
         }
 
-        // POST: Faculties/Create
+        // POST: Event/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Faculty faculty)
+        public async Task<IActionResult> Create([Bind("Id,Name,StartTime,EndTime")] Event @event)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(faculty);
+                _context.Add(@event);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(faculty);
+            return View(@event);
         }
 
-        // GET: Faculties/Edit/5
+        // GET: Event/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -76,20 +73,22 @@ namespace EventsInfrastructure.Controllers
                 return NotFound();
             }
 
-            var faculty = await _context.Faculties.FindAsync(id);
-            if (faculty == null)
+            var @event = await _context.Events.FindAsync(id);
+            if (@event == null)
             {
                 return NotFound();
             }
-            return View(faculty); // Використовується в'юшка Edit для редагування факультету
+            return View(@event);
         }
 
-        // POST: Faculties/Edit/5
+        // POST: Event/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Faculty faculty)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,StartTime,EndTime")] Event @event)
         {
-            if (id != faculty.Id)
+            if (id != @event.Id)
             {
                 return NotFound();
             }
@@ -98,12 +97,12 @@ namespace EventsInfrastructure.Controllers
             {
                 try
                 {
-                    _context.Update(faculty);
+                    _context.Update(@event);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FacultyExists(faculty.Id))
+                    if (!EventExists(@event.Id))
                     {
                         return NotFound();
                     }
@@ -114,10 +113,10 @@ namespace EventsInfrastructure.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(faculty);
+            return View(@event);
         }
 
-        // GET: Faculties/Delete/5
+        // GET: Event/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -125,36 +124,34 @@ namespace EventsInfrastructure.Controllers
                 return NotFound();
             }
 
-            var faculty = await _context.Faculties
+            var @event = await _context.Events
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (faculty == null)
+            if (@event == null)
             {
                 return NotFound();
             }
 
-            return View(faculty); // Використовується в'юшка Delete для видалення факультету
+            return View(@event);
         }
 
-        // POST: Faculties/Delete/5
+        // POST: Event/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var faculty = await _context.Faculties.FindAsync(id);
-            if (faculty != null)
+            var @event = await _context.Events.FindAsync(id);
+            if (@event != null)
             {
-                _context.Faculties.Remove(faculty);
-                await _context.SaveChangesAsync();
+                _context.Events.Remove(@event);
             }
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool FacultyExists(int id)
+        private bool EventExists(int id)
         {
-            return _context.Faculties.Any(e => e.Id == id);
+            return _context.Events.Any(e => e.Id == id);
         }
     }
 }
-
-

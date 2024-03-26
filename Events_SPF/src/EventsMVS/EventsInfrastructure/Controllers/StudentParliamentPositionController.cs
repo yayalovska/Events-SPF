@@ -10,23 +10,22 @@ using EventsInfrastructure;
 
 namespace EventsInfrastructure.Controllers
 {
-    public class DepartmentsController : Controller
+    public class StudentParliamentPositionController : Controller
     {
         private readonly BdeventsContext _context;
 
-        public DepartmentsController(BdeventsContext context)
+        public StudentParliamentPositionController(BdeventsContext context)
         {
             _context = context;
         }
 
-        // GET: Departments
+        // GET: StudentParliamentPosition
         public async Task<IActionResult> Index()
         {
-            var bdeventsContext = _context.Departments.Include(d => d.Faculty);
-            return View(await bdeventsContext.ToListAsync());
+            return View(await _context.StudentParliamentPositions.ToListAsync());
         }
 
-        // GET: Departments/Details/5
+        // GET: StudentParliamentPosition/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,39 @@ namespace EventsInfrastructure.Controllers
                 return NotFound();
             }
 
-            var department = await _context.Departments
-                .Include(d => d.Faculty)
+            var studentParliamentPosition = await _context.StudentParliamentPositions
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (department == null)
+            if (studentParliamentPosition == null)
             {
                 return NotFound();
             }
 
-            return RedirectToAction("Index", "Faculties", new { id = department.Id, name = department.Name });
+            return View(studentParliamentPosition);
         }
 
-        // GET: Departments/Create
-        public IActionResult Create(int facultyId)
+        // GET: StudentParliamentPosition/Create
+        public IActionResult Create()
         {
-            // Передаємо ID факультету в представлення для зв'язування
-            ViewBag.FacultyId = facultyId;
             return View();
         }
 
-        // POST: Departments/Create
+        // POST: StudentParliamentPosition/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,FacultyId")] Department department)
+        public async Task<IActionResult> Create([Bind("Id,Name")] StudentParliamentPosition studentParliamentPosition)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(department);
+                _context.Add(studentParliamentPosition);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index), new { facultyId = department.FacultyId });
+                return RedirectToAction(nameof(Index));
             }
-            ViewBag.FacultyId = department.FacultyId;
-            return View(department);
+            return View(studentParliamentPosition);
         }
 
-
-        // GET: Departments/Edit/5
+        // GET: StudentParliamentPosition/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +73,22 @@ namespace EventsInfrastructure.Controllers
                 return NotFound();
             }
 
-            var department = await _context.Departments.FindAsync(id);
-            if (department == null)
+            var studentParliamentPosition = await _context.StudentParliamentPositions.FindAsync(id);
+            if (studentParliamentPosition == null)
             {
                 return NotFound();
             }
-            ViewData["FacultyId"] = new SelectList(_context.Faculties, "Id", "Name", department.FacultyId);
-            return View(department);
+            return View(studentParliamentPosition);
         }
 
-        // POST: Departments/Edit/5
+        // POST: StudentParliamentPosition/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,FacultyId")] Department department)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] StudentParliamentPosition studentParliamentPosition)
         {
-            if (id != department.Id)
+            if (id != studentParliamentPosition.Id)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace EventsInfrastructure.Controllers
             {
                 try
                 {
-                    _context.Update(department);
+                    _context.Update(studentParliamentPosition);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DepartmentExists(department.Id))
+                    if (!StudentParliamentPositionExists(studentParliamentPosition.Id))
                     {
                         return NotFound();
                     }
@@ -118,11 +113,10 @@ namespace EventsInfrastructure.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FacultyId"] = new SelectList(_context.Faculties, "Id", "Name", department.FacultyId);
-            return View(department);
+            return View(studentParliamentPosition);
         }
 
-        // GET: Departments/Delete/5
+        // GET: StudentParliamentPosition/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,35 +124,34 @@ namespace EventsInfrastructure.Controllers
                 return NotFound();
             }
 
-            var department = await _context.Departments
-                .Include(d => d.Faculty)
+            var studentParliamentPosition = await _context.StudentParliamentPositions
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (department == null)
+            if (studentParliamentPosition == null)
             {
                 return NotFound();
             }
 
-            return View(department);
+            return View(studentParliamentPosition);
         }
 
-        // POST: Departments/Delete/5
+        // POST: StudentParliamentPosition/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var department = await _context.Departments.FindAsync(id);
-            if (department != null)
+            var studentParliamentPosition = await _context.StudentParliamentPositions.FindAsync(id);
+            if (studentParliamentPosition != null)
             {
-                _context.Departments.Remove(department);
+                _context.StudentParliamentPositions.Remove(studentParliamentPosition);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DepartmentExists(int id)
+        private bool StudentParliamentPositionExists(int id)
         {
-            return _context.Departments.Any(e => e.Id == id);
+            return _context.StudentParliamentPositions.Any(e => e.Id == id);
         }
     }
 }
