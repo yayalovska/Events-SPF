@@ -20,11 +20,15 @@ namespace EventsInfrastructure.Controllers
         }
 
         // GET: EducationProgram
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? facultyId)
         {
-            var bdeventsContext = _context.EducationPrograms.Include(e => e.Faculty);
-            return View(await bdeventsContext.ToListAsync());
+            var educationPrograms = facultyId == null ?
+                _context.EducationPrograms :
+                _context.EducationPrograms.Where(e => e.FacultyId == facultyId);
+
+            return View(await educationPrograms.ToListAsync());
         }
+
 
         // GET: EducationProgram/Details/5
         public async Task<IActionResult> Details(int? id)

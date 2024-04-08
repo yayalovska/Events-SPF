@@ -6,13 +6,23 @@
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="EventsInfrastructure/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EventsInfrastructure/Controllers/DepartmentsController.cs">
     <Files>
-      <File FileName="EventsInfrastructure/BdeventsContext.cs" Line="2" Column="1" />
-      <File FileName="EventsDomain/Models/Department.cs" Line="8" Column="15" />
-      <File FileName="EventsDomain/Models/Entity.cs" Line="6" Column="10" />
-      <File FileName="EventsDomain/Models/StudentParliamentPosition.cs" Line="8" Column="15" />
-      <File FileName="EventsInfrastructure/Program.cs" Line="1" Column="1" />
+      <File FileName="EventsInfrastructure/Views/Departments/Create.cshtml" Line="1" Column="1" />
+      <File FileName="EventsInfrastructure/Program.cs" Line="33" Column="1" />
+      <File FileName="EventsInfrastructure/BdeventsContext.cs" Line="40" Column="6" />
+      <File FileName="EventsInfrastructure/Views/Faculties/EmptyHtmlFile.html" Line="1" Column="1" />
+      <File FileName="EventsInfrastructure/Controllers/FacultiesController.cs" Line="28" Column="1" />
+      <File FileName="EventsInfrastructure/Controllers/DepartmentsController.cs" Line="82" Column="4" />
+      <File FileName="EventsInfrastructure/Views/Faculties/Create.cshtml" Line="1" Column="1" />
+      <File FileName="EventsInfrastructure/Views/Faculties/Details.cshtml" Line="1" Column="1" />
+      <File FileName="EventsInfrastructure/Views/Faculties/Index.cshtml" Line="26" Column="22" />
+      <File FileName="EventsInfrastructure/Views/Departments/Index.cshtml" Line="1" Column="32" />
+      <File FileName="EventsDomain/Models/Faculty.cs" Line="13" Column="1" />
+      <File FileName="EventsInfrastructure/Controllers/StudentController.cs" Line="23" Column="1" />
+      <File FileName="EventsInfrastructure/Controllers/EducationProgramController.cs" Line="30" Column="10" />
+      <File FileName="EventsInfrastructure/Views/EducationProgram/Index.cshtml" Line="13" Column="47" />
+      <File FileName="EventsDomain/Models/Department.cs" Line="19" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,8 +32,13 @@
               <Node name="Models" expanded="True" />
             </Node>
             <Node name="EventsInfrastructure">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Program.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="DepartmentsController.cs" selected="True" />
+              </Node>
+              <Node name="Views">
+                <Node name="Departments" expanded="True" />
+                <Node name="Faculties" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

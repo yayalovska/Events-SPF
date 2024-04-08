@@ -22,10 +22,11 @@ namespace EventsInfrastructure.Controllers
         // GET: Faculties
         public async Task<IActionResult> Index()
         {
-            // Відображення всіх факультетів
             var faculties = await _context.Faculties.ToListAsync();
-            return View(faculties); // Зверніть увагу: використовуємо "Index" як назву в'юшки за замовчуванням
+            return View(faculties);
         }
+
+
 
         // GET: Faculties/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -57,16 +58,18 @@ namespace EventsInfrastructure.Controllers
         // POST: Faculties/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Faculty faculty)
+        public async Task<IActionResult> Create([Bind("Id,Name, FacultyId")] Department department)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(faculty);
+                _context.Add(department);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(faculty);
+            
+            return View(department);
         }
+
 
         // GET: Faculties/Edit/5
         public async Task<IActionResult> Edit(int? id)

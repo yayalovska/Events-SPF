@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/wwwroot/images/cat.avif",
+      "PackagePath": "staticwebassets/images/cat.avif"
+    },
+    {
+      "Id": "/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/wwwroot/images/cat.jpeg",
+      "PackagePath": "staticwebassets/images/cat.jpeg"
+    },
+    {
+      "Id": "/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/wwwroot/images/cat1.jpeg",
+      "PackagePath": "staticwebassets/images/cat1.jpeg"
+    },
+    {
+      "Id": "/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/wwwroot/images/cat2.jpeg",
+      "PackagePath": "staticwebassets/images/cat2.jpeg"
+    },
+    {
       "Id": "/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },
@@ -147,6 +163,14 @@
     {
       "Id": "/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/wwwroot/lib/bootstrap/dist/css/bootstrap_lux.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap_lux.css"
+    },
+    {
+      "Id": "/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/wwwroot/lib/bootstrap/dist/css/bootstrap_lux.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap_lux.min.css"
     },
     {
       "Id": "/Users/yanayalovska/Projects/Events_SPF/src/EventsMVS/EventsInfrastructure/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",

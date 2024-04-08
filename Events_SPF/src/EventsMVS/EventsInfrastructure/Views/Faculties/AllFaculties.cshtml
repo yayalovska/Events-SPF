@@ -1,0 +1,31 @@
+﻿@model EventsDomain.Models.Faculty
+
+    @{
+    ViewData["Title"] = "Всі факультети";
+    }
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Name)</th>
+            <th>Дії</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var faculty in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => faculty.Name)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@faculty.Id">Редагувати</a> |
+                <a asp-action="Details" asp-route-id="@faculty.Id">Деталі</a> |
+                <a asp-action="Delete" asp-route-id="@faculty.Id">Видалити</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Створити новий факультет</a>

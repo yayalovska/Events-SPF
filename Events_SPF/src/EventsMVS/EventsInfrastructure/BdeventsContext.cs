@@ -40,18 +40,10 @@ public partial class BdeventsContext : DbContext
     {
         modelBuilder.Entity<Department>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("Departments_PK");
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.FacultyId).HasColumnName("FacultyID");
-            entity.Property(e => e.Name)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-
-            entity.HasOne(d => d.Faculty).WithMany(p => p.Departments)
-                .HasForeignKey(d => d.FacultyId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("Departments_Faculties_FK");
+            modelBuilder.Entity<Faculty>()
+                .HasMany(f => f.Departments)
+                .WithOne(d => d.Faculty)
+                .HasForeignKey(d => d.FacultyId);
         });
 
         modelBuilder.Entity<EducationProgram>(entity =>

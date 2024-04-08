@@ -25,7 +25,7 @@ namespace EventsInfrastructure.Controllers
             return View(await _context.StudentParliamentPositions.ToListAsync());
         }
 
-        // GET: StudentParliamentPosition/Details/5
+        // GET: StudentParliamentPositions/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,15 +33,19 @@ namespace EventsInfrastructure.Controllers
                 return NotFound();
             }
 
-            var studentParliamentPosition = await _context.StudentParliamentPositions
+            var position = await _context.StudentParliamentPositions
+                .Include(p => p.StudentParliamentMembers)
+                .ThenInclude(spm => spm.Student)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (studentParliamentPosition == null)
+
+            if (position == null)
             {
                 return NotFound();
             }
 
-            return View(studentParliamentPosition);
+            return View(position);
         }
+
 
         // GET: StudentParliamentPosition/Create
         public IActionResult Create()

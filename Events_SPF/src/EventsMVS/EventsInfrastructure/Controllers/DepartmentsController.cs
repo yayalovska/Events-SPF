@@ -22,9 +22,11 @@ namespace EventsInfrastructure.Controllers
         // GET: Departments
         public async Task<IActionResult> Index()
         {
-            var bdeventsContext = _context.Departments.Include(d => d.Faculty);
-            return View(await bdeventsContext.ToListAsync());
+            var departments = _context.Departments.Include(d => d.Faculty);
+            return View(await departments.ToListAsync());
         }
+
+
 
         // GET: Departments/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -46,25 +48,25 @@ namespace EventsInfrastructure.Controllers
         }
 
         // GET: Departments/Create
-        public IActionResult Create(int facultyId)
+        public IActionResult Create()
         {
-            // Передаємо ID факультету в представлення для зв'язування
-            ViewBag.FacultyId = facultyId;
+            // Завантаження списку факультетів для dropdown
+            ViewData["FacultyId"] = new SelectList(_context.Faculties, "Id", "Name");
             return View();
         }
 
         // POST: Departments/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,FacultyId")] Department department)
+        public async Task<IActionResult> Create([Bind("Id,Name,FacultyId")] Department department)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(department);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index), new { facultyId = department.FacultyId });
+                return RedirectToAction(nameof(Index));
             }
-            ViewBag.FacultyId = department.FacultyId;
+            ViewData["FacultyId"] = new SelectList(_context.Faculties, "Id", "Name", department.FacultyId);
             return View(department);
         }
 

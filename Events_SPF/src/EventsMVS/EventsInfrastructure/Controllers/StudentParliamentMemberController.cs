@@ -46,17 +46,15 @@ namespace EventsInfrastructure.Controllers
             return View(studentParliamentMember);
         }
 
-        // GET: StudentParliamentMember/Create
+        // GET: StudentParliamentMembers/Create
         public IActionResult Create()
         {
-            ViewData["PositionId"] = new SelectList(_context.StudentParliamentPositions, "Id", "Id");
+            ViewData["PositionId"] = new SelectList(_context.StudentParliamentPositions, "Id", "Name");
             ViewData["StudentId"] = new SelectList(_context.Students, "Id", "FullName");
             return View();
         }
 
-        // POST: StudentParliamentMember/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: StudentParliamentMembers/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,StudentId,PositionId")] StudentParliamentMember studentParliamentMember)
@@ -67,7 +65,7 @@ namespace EventsInfrastructure.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PositionId"] = new SelectList(_context.StudentParliamentPositions, "Id", "Id", studentParliamentMember.PositionId);
+            ViewData["PositionId"] = new SelectList(_context.StudentParliamentPositions, "Id", "Name", studentParliamentMember.PositionId);
             ViewData["StudentId"] = new SelectList(_context.Students, "Id", "FullName", studentParliamentMember.StudentId);
             return View(studentParliamentMember);
         }
