@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -19,46 +16,39 @@ namespace EventsInfrastructure.Controllers
             _context = context;
         }
 
-        // GET: Departments
         public async Task<IActionResult> Index()
         {
-            var departments = _context.Departments.Include(d => d.Faculty);
-            return View(await departments.ToListAsync());
+            var departments = await _context.Departments.Include(d => d.Faculty).ToListAsync();
+            return View(departments);
         }
 
-
-
-        // GET: Departments/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            if (!id.HasValue)
             {
                 return NotFound();
             }
 
             var department = await _context.Departments
                 .Include(d => d.Faculty)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == id.Value);
             if (department == null)
             {
                 return NotFound();
             }
 
-            return RedirectToAction("Index", "Faculties", new { id = department.Id, name = department.Name });
+            return View(department);
         }
 
-        // GET: Departments/Create
         public IActionResult Create()
         {
-            // Завантаження списку факультетів для dropdown
             ViewData["FacultyId"] = new SelectList(_context.Faculties, "Id", "Name");
             return View();
         }
 
-        // POST: Departments/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,FacultyId")] Department department)
+        public async Task<IActionResult> Create([Bind("Name,FacultyId")] Department department)
         {
             if (ModelState.IsValid)
             {
@@ -70,16 +60,14 @@ namespace EventsInfrastructure.Controllers
             return View(department);
         }
 
-
-        // GET: Departments/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+            if (!id.HasValue)
             {
                 return NotFound();
             }
 
-            var department = await _context.Departments.FindAsync(id);
+            var department = await _context.Departments.FindAsync(id.Value);
             if (department == null)
             {
                 return NotFound();
@@ -88,12 +76,9 @@ namespace EventsInfrastructure.Controllers
             return View(department);
         }
 
-        // POST: Departments/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,FacultyId")] Department department)
+        public async Task<IActionResult> Edit(int id, [Bind("Name,FacultyId")] Department department)
         {
             if (id != department.Id)
             {
@@ -124,17 +109,16 @@ namespace EventsInfrastructure.Controllers
             return View(department);
         }
 
-        // GET: Departments/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
+            if (!id.HasValue)
             {
                 return NotFound();
             }
 
             var department = await _context.Departments
                 .Include(d => d.Faculty)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == id.Value);
             if (department == null)
             {
                 return NotFound();
@@ -143,7 +127,6 @@ namespace EventsInfrastructure.Controllers
             return View(department);
         }
 
-        // POST: Departments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -152,9 +135,8 @@ namespace EventsInfrastructure.Controllers
             if (department != null)
             {
                 _context.Departments.Remove(department);
+                await _context.SaveChangesAsync();
             }
-
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

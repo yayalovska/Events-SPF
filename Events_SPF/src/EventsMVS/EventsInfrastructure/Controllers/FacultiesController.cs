@@ -37,7 +37,7 @@ namespace EventsInfrastructure.Controllers
             }
 
             var faculty = await _context.Faculties
-                .Include(f => f.Departments) // Для відображення департаментів в деталях факультету
+                .Include(f => f.Departments) 
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (faculty == null)
@@ -45,30 +45,29 @@ namespace EventsInfrastructure.Controllers
                 return NotFound();
             }
 
-            return View(faculty); // Зверніть увагу: використовуємо "Details" як назву в'юшки
+            return View(faculty); 
         }
 
         // GET: Faculties/Create
         public IActionResult Create()
         {
-            // Метод Create вже не залежить від departmentId, тому що факультети створюються окремо
-            return View(); // Використовується в'юшка Create без передачі даних
+            return View(new Faculty()); 
         }
 
         // POST: Faculties/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name, FacultyId")] Department department)
+        public async Task<IActionResult> Create([Bind("Name")] Faculty faculty)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(department);
+                _context.Add(faculty);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            
-            return View(department);
+            return View(faculty);
         }
+
 
 
         // GET: Faculties/Edit/5
@@ -84,13 +83,13 @@ namespace EventsInfrastructure.Controllers
             {
                 return NotFound();
             }
-            return View(faculty); // Використовується в'юшка Edit для редагування факультету
+            return View(faculty); 
         }
 
         // POST: Faculties/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Faculty faculty)
+        public async Task<IActionResult> Edit(int id, [Bind("Name")] Faculty faculty)
         {
             if (id != faculty.Id)
             {
@@ -106,7 +105,7 @@ namespace EventsInfrastructure.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FacultyExists(faculty.Id))
+                    if (!await FacultyExists(faculty.Id))
                     {
                         return NotFound();
                     }
@@ -135,7 +134,7 @@ namespace EventsInfrastructure.Controllers
                 return NotFound();
             }
 
-            return View(faculty); // Використовується в'юшка Delete для видалення факультету
+            return View(faculty); 
         }
 
         // POST: Faculties/Delete/5
@@ -149,15 +148,14 @@ namespace EventsInfrastructure.Controllers
                 _context.Faculties.Remove(faculty);
                 await _context.SaveChangesAsync();
             }
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool FacultyExists(int id)
+
+        private async Task<bool> FacultyExists(int id)
         {
-            return _context.Faculties.Any(e => e.Id == id);
+            return await _context.Faculties.AnyAsync(e => e.Id == id);
         }
+
     }
 }
-
-

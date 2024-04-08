@@ -40,10 +40,15 @@ public partial class BdeventsContext : DbContext
     {
         modelBuilder.Entity<Department>(entity =>
         {
-            modelBuilder.Entity<Faculty>()
-                .HasMany(f => f.Departments)
-                .WithOne(d => d.Faculty)
-                .HasForeignKey(d => d.FacultyId);
+            entity.HasKey(e => e.Id).HasName("Departments_PK");
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.Name).HasMaxLength(100).IsUnicode(false);
+
+            entity.HasOne(d => d.Faculty)
+                .WithMany(f => f.Departments)
+                .HasForeignKey(d => d.FacultyId)
+                .OnDelete(DeleteBehavior.Restrict) 
+                .HasConstraintName("FK_Departments_Faculties");
         });
 
         modelBuilder.Entity<EducationProgram>(entity =>
@@ -100,11 +105,8 @@ public partial class BdeventsContext : DbContext
         modelBuilder.Entity<Faculty>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("Faculties_PK");
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.Name)
-                .HasMaxLength(100)
-                .IsUnicode(false);
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.Name).HasMaxLength(100).IsUnicode(false);
         });
 
         modelBuilder.Entity<Student>(entity =>

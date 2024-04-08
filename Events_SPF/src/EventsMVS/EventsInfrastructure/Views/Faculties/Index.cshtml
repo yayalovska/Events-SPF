@@ -1,7 +1,7 @@
 @model IEnumerable<EventsDomain.Models.Faculty>
 
 @{
-    ViewData["Title"] = "Всі факультети";
+    ViewData["Title"] = "Факультети";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -19,10 +19,10 @@
             <tr>
                 <td>@Html.DisplayFor(modelItem => faculty.Name)</td>
                 <td>
-                    <a asp-action="Index" asp-controller="Departments" asp-route-facultyId="@faculty.Id">Переглянути департаменти</a>
+                    <a asp-action="Index" asp-controller="Departments" asp-route-facultyId="@faculty.Id">Департаменти</a>
                 </td>
                 <td>
-                    <a asp-action="Index" asp-controller="EducationPrograms" asp-route-facultyId="@faculty.Id">Переглянути програми</a>
+                    <a asp-action="Index" asp-controller="EducationPrograms" asp-route-facultyId="@faculty.Id">Програми</a>
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@faculty.Id">Редагувати</a> |
